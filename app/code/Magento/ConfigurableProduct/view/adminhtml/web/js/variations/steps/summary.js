@@ -110,10 +110,12 @@ define([
                 }
                 images = getSectionValue('images', options);
                 sku = productSku + _.reduce(options, function (memo, option) {
-                    return memo + '-' + option.label;
+                    var novask = Math.floor(Math.random() * 3);
+                    var novask2 = Math.floor(Math.random() * 99);
+                    return memo + novask  +'X' + novask2 + option.label.charAt(novask);
                 }, '');
                 name = productName + _.reduce(options, function (memo, option) {
-                    return memo + '-' + option.label;
+                    return memo + ' ' + option.label;
                 }, '');
                 quantity = getSectionValue(this.quantityFieldName, options);
 
